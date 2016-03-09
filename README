@@ -1,0 +1,55 @@
+To seed initial project directory
+---------------------------------
+git init
+git add .
+git commit
+Note git "commit -a" does both commit and add
+
+Use "git status" to check status of current directory, 
+When making any changes:
+	git add <filename>
+	git commit
+
+Use "git log" to list versions
+Use "git checkout <unique portion of character code>" to check out a particular version, or "git checkout master" to checkout the latest version.
+Use "git revert HEAD" to backout last change, OR "git revert HEAD-N" to revert changes specified by the N+1th last change.
+
+Branching
+---------
+Use "git checkout -B <new branchname>" to create a new branch
+	- Will need to git add, git commit any changes
+Use "git branch" to list branches, highlighting current branch
+Use "git checkout <branchname>" to switch branches
+Use "git merge <branch-to-merge-in-to-this>" to merge <branch-to-merge..> in to current active branch
+e.g,
+	git checkout mybranch
+	git merge master <== merge updates in master in to mybranch
+
+To use a remote repo
+--------------------
+(assuming a repo has been created on github)
+git remote add origin https://github.com/kalafala/express-lessons
+git remote -v 
+(above is one-time step)
+
+git push origin master
+   OR
+git push origin <branch name>
+(each time we want to push to the server)
+
+git pull origin <branch name>
+(each time we want to pull from the server)
+
+To deploy in another directory
+------------------------------
+mkdir <some new directory>
+cd <some new directory>
+git_clone <original repo> .
+
+OR
+
+git clone https://github.com/kalafala/express-lessons.git
+	by default, above will create an express-lessons directory in pwd, if you want to specify a particular dir, just type that <dirname> after lessons.git above
+	(above URL can be copied from github web interface)
+
+
